@@ -1,0 +1,14 @@
+# RabbitMQ
+
+기본적인 메시지 큐 개념
+
+- BROKER
+  - RabbitMQ가 메시지 브로커
+- PRODUCER
+  - 메시지를 발행하는 곳
+- CONSUMER
+  - 메시지를 구독하는 곳
+- Exchange
+  - PRODUCER로 부터 받은 메시지를 어떤 Queue로 보낼지 결정하는 장소
+  - 4가지 타입이 있음
+  
