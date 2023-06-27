@@ -47,6 +47,10 @@ static async putItem(item) {
 잘 저장된다.
 
 
+### API Gateway
+
+AWS 공식문서 [API Gateway 시작하기](https://docs.aws.amazon.com/ko_kr/apigateway/latest/developerguide/getting-started.html)를 보고 람다를 연결해줬다.
+
 ### 계층 생성
 
 여러개의 람다함수에 같은 환경을 설정하고 싶다면 계층을 이용하면 된다.
