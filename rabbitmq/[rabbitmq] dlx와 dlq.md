@@ -1,6 +1,4 @@
-# [rabbitmq] dlx와 dlq
-
-공식문서 보고 정리하면서 공부하기
+> 공식 문서 보고 정리하기
 
 - https://www.rabbitmq.com/dlx.html
 
