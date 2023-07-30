@@ -65,3 +65,9 @@ AWS 공식문서 [API Gateway 시작하기](https://docs.aws.amazon.com/ko_kr/ap
 
 계층 페이지에서 사용자 지정 계층을 올린것이다. '사용자 지정 계층'을 선택해서 방금 내가 올린 계층을 올려주면 되겠다.
 
+**계층 권한 구성**
+
+```
+aws lambda add-layer-version-permission --layer-name xray-sdk-nodejs --statement-id xaccount \
+--action lambda:GetLayerVersion  --principal 111122223333 --version-number 1 --output text
+```
