@@ -65,11 +65,14 @@ AWS 공식문서 [API Gateway 시작하기](https://docs.aws.amazon.com/ko_kr/ap
 
 계층 페이지에서 사용자 지정 계층을 올린것이다. '사용자 지정 계층'을 선택해서 방금 내가 올린 계층을 올려주면 되겠다.
 
-**계층 권한 구성**
+진행하다보니 의도대로 안되거나 어떻게 해야되는지 모르겠음..
 
-```
-aws lambda add-layer-version-permission --layer-name xray-sdk-nodejs --statement-id xaccount \
---action lambda:GetLayerVersion  --principal 111122223333 --version-number 1 --output text
+ AWS 컴퓨팅 블로그의 [Lambda 계층을 사용하여 개발 프로세스 단순화](https://aws.amazon.com/ko/blogs/compute/using-lambda-layers-to-simplify-your-development-process/)를 참조했더니 계층 동작에 성공했다.
+
+ 하지만 해당 글은 예전 버전 기준으로 예시가 작성되어있다. (요즘은 aws-sdk 전체 의존성을 추가하지 않고 각각의 모듈별로 의존성을 추가하여 사용하는 추세로 바뀌었다. (예. @aws-sdk/client-dynamodb) 또한 node 버전도 현재 18까지 올라갔고 aws-sdk도 3 이상으로 바뀌었다.)  
+ 로컬 layer 구성의 프로젝트를 생성하여 최신버전에 맞게 코드를 수정하여 배포하면 정상적으로 작동하니 특히 `samconfig.toml`파일과 `package.json` 파일을 잘 수정하여 배포하면 되겠다.  
+ 나도 별도의 프로젝트를 만들어 [lambda-layer](https://github.com/zieunx/lambda-layer) git repostiory에 올려두었다. (git에 public repository로 올리기 전에 개인정보가 포함되어있는지 확인 후에 올려야 한다.)
+
 ```
 
 ### 응답 구성
