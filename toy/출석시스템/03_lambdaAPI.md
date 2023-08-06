@@ -71,3 +71,26 @@ AWS 공식문서 [API Gateway 시작하기](https://docs.aws.amazon.com/ko_kr/ap
 aws lambda add-layer-version-permission --layer-name xray-sdk-nodejs --statement-id xaccount \
 --action lambda:GetLayerVersion  --principal 111122223333 --version-number 1 --output text
 ```
+
+### 응답 구성
+
+```javascript
+exports.handler = async (event) => {
+    const response = {
+        statusCode: 200,
+        headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "Custom-Header": "customHeaderValue"
+        },
+        body: JSON.stringify({ key: 'value' })
+    };
+    return response;
+};
+```
+
+람다의 기본 응답 구성이다.
+
+- statusCode는 http status code를 입력하면 된다.
+- header는 JSON 형식으로 구성하고 여러개 추가할 수 있다.
+- body는 문자열로 응답해야한다. Json으로 응답하고싶으면 `JSON.stringify({ key: 'value' })`로 응답하되 헤더에 ` "Content-Type": "application/json"`를 달아주면 된다. Json 그대로 응답하면 500 에러 발생함..
