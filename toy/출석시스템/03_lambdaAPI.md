@@ -73,9 +73,9 @@ AWS 공식문서 [API Gateway 시작하기](https://docs.aws.amazon.com/ko_kr/ap
  로컬 layer 구성의 프로젝트를 생성하여 최신버전에 맞게 코드를 수정하여 배포하면 정상적으로 작동하니 특히 `samconfig.toml`파일과 `package.json` 파일을 잘 수정하여 배포하면 되겠다.  
  나도 별도의 프로젝트를 만들어 [lambda-layer](https://github.com/zieunx/lambda-layer) git repostiory에 올려두었다. (git에 public repository로 올리기 전에 개인정보가 포함되어있는지 확인 후에 올려야 한다.)
 
-```
 
 ### 응답 구성
+
 
 ```javascript
 exports.handler = async (event) => {
