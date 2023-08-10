@@ -103,19 +103,15 @@ exports.handler = async (event) => {
 람다에서 요청이벤트를 출력하면 대충 이렇게 생겼다.
 
 ```json
-2023-08-10T14:50:51.575Z	7e77d29e-c7d5-4f9c-bbe0-51427ae7be2c	INFO	event:  {
-  version: '2.0',
-  routeKey: 'POST /attendance',
-  rawPath: '/default/attendance',
-  rawQueryString: '',
-  headers: {
-    // 중략
-  },
-  requestContext: {
-// 중략
-  },
-  body: '{ \n\t "type": "url_verification",\n\t "token": "",\n\t "challenge": "test"\n}',
-  isBase64Encoded: false
+{
+  "version": "2.0",
+  "routeKey": "POST /attendance",
+  "rawPath": "/default/attendance",
+  "rawQueryString": "",
+  "headers": {},
+  "requestContext": {},
+  "body": "{ \n\t \"type\": \"url_verification\",\n\t \"token\": \"\",\n\t \"challenge\": \"test\"\n}",
+  "isBase64Encoded": false
 }
 
 ```
