@@ -97,3 +97,27 @@ exports.handler = async (event) => {
 - statusCode는 http status code를 입력하면 된다.
 - header는 JSON 형식으로 구성하고 여러개 추가할 수 있다.
 - body는 문자열로 응답해야한다. Json으로 응답하고싶으면 `JSON.stringify({ key: 'value' })`로 응답하되 헤더에 ` "Content-Type": "application/json"`를 달아주면 된다. Json 그대로 응답하면 500 에러 발생함..
+
+### 요청값 추출하기
+
+람다에서 요청이벤트를 출력하면 대충 이렇게 생겼다.
+
+```json
+2023-08-10T14:50:51.575Z	7e77d29e-c7d5-4f9c-bbe0-51427ae7be2c	INFO	event:  {
+  version: '2.0',
+  routeKey: 'POST /attendance',
+  rawPath: '/default/attendance',
+  rawQueryString: '',
+  headers: {
+    // 중략
+  },
+  requestContext: {
+// 중략
+  },
+  body: '{ \n\t "type": "url_verification",\n\t "token": "",\n\t "challenge": "test"\n}',
+  isBase64Encoded: false
+}
+
+```
+
+RequestBody를 꺼내려면 해당 이벤트의 body를 JSON으로 파싱하여 사용해야함.
