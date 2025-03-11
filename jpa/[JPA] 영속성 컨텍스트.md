@@ -43,7 +43,7 @@ persist() 했을 때 실제 쿼리가 날아가는 것이 아닌 Transction comm
 persist(member)
 persist(member)
 
-두 번 했을 때 쿼리가 하나 날아간다. 동일 객체를 
+두 번 했을 때 쿼리가 하나 날아간다. 동일 객체를 인지함.
 
 하이버네이트는 batch_size 설정하여 설정한 개수만큼 모아서 한번에 쿼리를 보낼 수 있다.
 
